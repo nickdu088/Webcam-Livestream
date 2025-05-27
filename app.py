@@ -78,7 +78,6 @@ async def video_feed(request):
                 continue
             
             annotated_frame = await detect(frame)
-            jpg_bytes = await encode(annotated_frame)
             t1 = timeit.default_timer()
             # FPS
             fps = 1.0 / (t1 - prev_time) if (t1 - prev_time) > 0 else 0.0
@@ -86,7 +85,7 @@ async def video_feed(request):
             # 
             cv2.putText(annotated_frame, f"FPS: {fps:.2f}", (10, 30),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2)
-            logger.info(f"Streaming FPS: {fps:.2f}")
+            jpg_bytes = await encode(annotated_frame)
             try:
                 await response.write(
                     b'--frame\r\n'
