@@ -1,5 +1,3 @@
-# Webcam-Livestream Real-Time Object Detection
-
 # 📷 Real-Time Object Detection and Live Video Streaming Web App
 
 ## Project Description
