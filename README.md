@@ -2,6 +2,10 @@
 
 ## Project Description
 
+Two version of object detection: 
+1. Server side - suit for powerful web server.
+2. Client (browser) side - suit for IoT devices
+
 This project is a lightweight web application for **real-time object detection and video streaming** using a webcam. Built with `aiohttp` for asynchronous web serving and powered by **YOLOv8 (You Only Look Once)** for object detection, the app processes webcam footage, detects objects in each frame, annotates them, and streams the result to a web browser in real time.
 
 ---
