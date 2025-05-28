@@ -56,7 +56,7 @@ async def video_feed(request):
     await response.prepare(request)
 
     loop = asyncio.get_event_loop()
-    cap = await loop.run_in_executor(executor, lambda: cv2.VideoCapture(1))
+    cap = await loop.run_in_executor(executor, lambda: cv2.VideoCapture(0))
 
     async def get_frame():
         return await loop.run_in_executor(executor, cap.read)
